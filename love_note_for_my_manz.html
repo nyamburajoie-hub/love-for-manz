@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff5f6">
+<title>A little place for you ❤️</title>
+<style>
+  :root { --rose:#c94f70; --deep:#71374b; --pink:#ffe5eb; --cream:#fffaf4; --ink:#503b43; }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; color:var(--ink); font-family: Georgia, "Times New Roman", serif;
+    background: radial-gradient(circle at top left,#ffe3eb 0,transparent 38%),
+                radial-gradient(circle at bottom right,#f8e8d8 0,transparent 35%), var(--cream);
+    min-height:100vh;
+  }
+  .wrap { width:min(760px, 100%); margin:auto; padding:24px 16px 42px; }
+  .top { text-align:center; padding:26px 12px 18px; }
+  .eyebrow { text-transform:uppercase; letter-spacing:.18em; font:700 11px Arial,sans-serif; color:var(--rose); }
+  h1 { font-size:clamp(36px,8vw,62px); line-height:1.04; margin:13px 0 12px; color:var(--deep); font-weight:normal; }
+  .subtitle { font:15px/1.7 Arial,sans-serif; max-width:510px; margin:0 auto; }
+  .heart { font-size:26px; color:var(--rose); display:inline-block; animation:beat 1.8s infinite; }
+  @keyframes beat { 0%,100%{transform:scale(1)} 10%,30%{transform:scale(1.14)} 20%,40%{transform:scale(1)} }
+  .card { background:rgba(255,255,255,.82); border:1px solid #f2d4dc; border-radius:22px; padding:22px; margin:15px 0; box-shadow:0 10px 30px rgba(113,55,75,.07); }
+  h2 { margin:0 0 12px; font-size:25px; font-weight:normal; color:var(--deep); }
+  p { line-height:1.8; margin:9px 0; }
+  .small { font:13px/1.7 Arial,sans-serif; }
+  .btns { display:flex; flex-wrap:wrap; gap:9px; margin-top:17px; }
+  button { border:0; border-radius:999px; padding:12px 16px; background:var(--rose); color:white; font:600 13px Arial,sans-serif; cursor:pointer; }
+  button.secondary { background:#fff0f3; color:var(--deep); border:1px solid #f0cbd5; }
+  button:focus-visible { outline:3px solid #eaa1b3; outline-offset:3px; }
+  .hidden { display:none; }
+  .note { border-left:3px solid #df8aa0; padding:5px 0 5px 15px; margin:15px 0; }
+  .pillrow { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:14px; }
+  .pill { text-align:center; background:#fff3f5; border-radius:16px; padding:15px 8px; font:13px/1.5 Arial,sans-serif; }
+  .pill strong { display:block; font-size:19px; margin-bottom:5px; color:var(--rose); }
+  .footer { text-align:center; padding:22px 8px 0; font:12px/1.7 Arial,sans-serif; color:#886c76; }
+  .signature { font-size:22px; color:var(--deep); font-style:italic; }
+  .toast { min-height:25px; color:var(--deep); font-style:italic; margin-top:12px; }
+  @media(max-width:480px) { .card{padding:18px}.pillrow{grid-template-columns:1fr}.pill{display:flex;gap:12px;align-items:center;text-align:left}.pill strong{margin:0;min-width:28px} }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="top">
+    <div class="eyebrow">A tiny corner of the world, just for you</div>
+    <div class="heart" aria-hidden="true">♥</div>
+    <h1>For my Manz</h1>
+    <p class="subtitle">For the days when life feels heavy, and for all the days in between. No pressure to be okay here, baby. ❤️</p>
+  </header>
+
+  <section class="card">
+    <h2>Hey, my love 🫂</h2>
+    <p>I know today has been a lot. I may not know exactly what's happening at home, and I won't push you to explain it. I just wanted to make you a little place where you can pause for a moment and remember that you're loved.</p>
+    <p>You don't have to solve everything tonight. You can be tired. You can be quiet. You can take things one step at a time. You don't need to perform happiness for me.</p>
+    <p>Even from Mombasa to Arusha, I'm still here, rooting for you and wishing I could give you the biggest, gentlest hug. ❤️</p>
+    <div class="note"><p><strong>Please remember:</strong> what you're going through matters, and so do you. You deserve rest and gentleness, too.</p></div>
+    <p class="signature">Always in your corner, your girl ❤️</p>
+  </section>
+
+  <section class="card">
+    <h2>Choose what you need right now 🌙</h2>
+    <p class="small">You don't have to reply to this page or explain anything. Just tap whichever feels right.</p>
+    <div class="btns">
+      <button onclick="showChoice('rest')">I just need rest</button>
+      <button class="secondary" onclick="showChoice('talk')">I want to talk</button>
+      <button class="secondary" onclick="showChoice('distraction')">Distract me a little</button>
+      <button class="secondary" onclick="showChoice('quiet')">Keep me company quietly</button>
+    </div>
+    <div id="choice" class="note hidden" aria-live="polite"></div>
+  </section>
+
+  <section class="card">
+    <h2>Three things I hope you remember ✨</h2>
+    <div class="pillrow">
+      <div class="pill"><strong>01</strong><span>You don't have to carry everything perfectly.</span></div>
+      <div class="pill"><strong>02</strong><span>You are loved on hard days, too.</span></div>
+      <div class="pill"><strong>03</strong><span>One difficult day isn't your whole story.</span></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>A little reminder from me 💌</h2>
+    <p>One of my favourite things about us is that even with distance between us, we still get to share pieces of our days. I can't always be beside you physically, but I can keep choosing kindness, patience, laughter, and love with you.</p>
+    <p>When you're ready, I'd love to hear your voice. If today isn't that day, that's okay too. Get some rest, baby. We'll take tomorrow as it comes. ❤️</p>
+    <div class="btns">
+      <button onclick="showPromise()">One last little thing</button>
+    </div>
+    <div id="promise" class="toast" aria-live="polite"></div>
+  </section>
+
+  <footer class="footer">
+    Made with love, just for you. <span aria-hidden="true">♥</span><br>
+    <span class="small">A gentle reminder, not another thing you need to respond to.</span>
+  </footer>
+</main>
+<script>
+function showChoice(which) {
+  const box = document.getElementById('choice');
+  const messages = {
+    rest: "Then rest, my love. You don't have to reply tonight. I hope your mind gets a little quieter and you wake up feeling lighter. Sleep well ❤️",
+    talk: "I'm here to listen, not to judge or rush you into a solution. You can start wherever you want, whenever you're ready. 🫂",
+    distraction: "Tiny assignment: think of one food we'd order together, one place we'd visit, or one silly thing that always makes you laugh. We can save the serious stuff for when you have more energy. ❤️",
+    quiet: "Imagine me sitting beside you, holding your hand without asking you to explain anything. No pressure, no fixing—just company from far away. 🫂"
+  };
+  box.textContent = messages[which];
+  box.classList.remove('hidden');
+}
+function showPromise() {
+  document.getElementById('promise').textContent =
+    "If today was hard, you don't have to make tomorrow perfect. Just take it one day at a time. I love you, Manz. ❤️";
+}
+</script>
+</body>
+</html>
